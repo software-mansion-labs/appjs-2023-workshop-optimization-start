@@ -1,0 +1,28 @@
+diff --git a/node_modules/react-redux/lib/exports.js b/node_modules/react-redux/lib/exports.js
+index 4235b88..a2065c5 100644
+--- a/node_modules/react-redux/lib/exports.js
++++ b/node_modules/react-redux/lib/exports.js
+@@ -49,6 +49,9 @@ Object.defineProperty(exports, "useSelector", {
+   enumerable: true,
+   get: function () {
+     return _useSelector.useSelector;
++  },
++  set: function (value) {
++    _useSelector.useSelector = value;
+   }
+ });
+ Object.defineProperty(exports, "createSelectorHook", {
+diff --git a/node_modules/react-redux/lib/index.js b/node_modules/react-redux/lib/index.js
+index 07dcece..e8f176f 100644
+--- a/node_modules/react-redux/lib/index.js
++++ b/node_modules/react-redux/lib/index.js
+@@ -33,6 +33,9 @@ Object.keys(_exports).forEach(function (key) {
+     enumerable: true,
+     get: function () {
+       return _exports[key];
++    },
++    set: function (value) {
++      _exports[key] = value;
+     }
+   });
+ });
